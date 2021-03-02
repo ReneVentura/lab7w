@@ -1,0 +1,123 @@
+
+@font-face {
+    font-family: "another";
+    src: url("./fonts/Another.otf");
+}
+@font-face {
+    font-family: "bloody";
+    src: url("./fonts/BLOODY.ttf");
+}
+
+h1 {
+  position: relative;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 2em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, crimson,white, crimson);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 10s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+button:hover{
+
+  background-image: linear-gradient(to right, #919191, black);
+  animation:slidebg 4s linear infinite;
+
+}
+
+img{
+
+  margin-left: 30%;
+}
+p{
+  animation: glitch 1s linear infinite;
+}
+
+@keyframes glitch{
+  2%,64%{
+    transform: translate(2px,0) skew(0deg);
+  }
+  4%,60%{
+    transform: translate(-2px,0) skew(0deg);
+  }
+  62%{
+    transform: translate(0,0) skew(5deg); 
+  }
+}
+
+p:before,
+p:after{
+  content: attr(title);
+  position: absolute;
+  left: 0;
+}
+
+p:before{
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop{
+  2%,64%{
+    transform: translate(2px,-2px);
+  }
+  4%,60%{
+    transform: translate(-2px,2px);
+  }
+  62%{
+    transform: translate(13px,-1px) skew(-13deg); 
+  }
+}
+
+p:after{
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom{
+  2%,64%{
+    transform: translate(-2px,0);
+  }
+  4%,60%{
+    transform: translate(-2px,0);
+  }
+  62%{
+    transform: translate(-22px,5px) skew(21deg); 
+  }
+}
+
+
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+
+@keyframes slidebg {
+  to {
+    background-position:20vw;
+  }
+}
+
+.follow{
+  margin-top: 40px;
+}
+
+.follow a{
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+
